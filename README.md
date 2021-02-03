@@ -30,6 +30,7 @@ Excel instructions
 - Please note the disclaimer and additional information in this tab.
 - Click the 'Load Aspen V10.0 file' to extract simulation results from the Aspen Plus file. Because of the directory locations in the macro code, the Aspen Plus file *must* be in V10.0. If using a different version of Aspen Plus, the directory locations must be changed in the 'Setup' tab VBA code.
 - Aspen Plus results will be reported in the given units in cells G14:H28.
+- Throughout the worksheet, orange cells can be changed directly by the user.
 
 'StreamData' tab:
 
@@ -50,3 +51,21 @@ Excel instructions
 
 - Lists cost index data for equipment (cols. A - C), chemicals (cols. E - G), labor (cols. I - K), and electricity (cols. M - O).
 - Any index years added or deleted must be accounted for in the 'StreamData' tab in cells I4:L7.
+
+'CAPEX' tab:
+
+- Capital equipment and scaling variables were derived from Knorr et al. (2013) and Jones et al. (2014).
+- Additional equipment and capital cost data can be added in new rows above the grayed cells ("INSERT additional [area] equipment above").
+- Boolean operators 0 or 1 in column A are used as a switch to exclude or include existing rows in calculations.
+
+'OPEX' tab:
+
+- Unit operating costs were derived from the sources listed in column K.
+- Additional operating cost data can be added in new rows above the grayed cells ("INSERT additional [operating cost] above").
+- Boolean operators 0 or 1 in column A are used as a switch to exclude or include existing rows in calculations.
+
+'DCFROR' tab:
+
+- The 'Solve feedstock price for MFSP target' button calculates the maximum algae feedstock price such that the target minimum fuel selling price (MFSP) entered in cell D26 can be achieved. The result is returned in cell D29.
+- The 'Solve MFSP for given feedstock price' button calculates the HTL MFSP such that the net present value of the plant is $0 over a standard 30-year lifetime. The feedstock price in cell D29 must be specified; a value of 0 returns the MFSP contribution of just the HTL process. The result is returned in cells B35 ($/gallon gasoline equivalent) and B36 ($/liter gasoline equivalent).
+- Ensure that the parameters in A3:C37 are valid. The cost year in cell B34 must be found within all tables in the 'CostIndex' tab.
