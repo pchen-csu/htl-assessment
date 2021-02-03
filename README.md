@@ -69,3 +69,20 @@ Excel instructions
 - The 'Solve feedstock price for MFSP target' button calculates the maximum algae feedstock price such that the target minimum fuel selling price (MFSP) entered in cell D26 can be achieved. The result is returned in cell D29.
 - The 'Solve MFSP for given feedstock price' button calculates the HTL MFSP such that the net present value of the plant is $0 over a standard 30-year lifetime. The feedstock price in cell D29 must be specified; a value of 0 returns the MFSP contribution of just the HTL process. The result is returned in cells B35 ($/gallon gasoline equivalent) and B36 ($/liter gasoline equivalent).
 - Ensure that the parameters in A3:C37 are valid. The cost year in cell B34 must be found within all tables in the 'CostIndex' tab.
+
+'LifeCycleInventory' tab:
+
+- Tool for Reduction and Assessment of Chemicals and Other Environmental Impacts (TRACI) v2.1 life cycle inventory data for all material and energy flows are listed in the table in D1:Q15.
+  - By default, inventory data are geographically resolved around the southern United States wherever data is available. Inventory data from different geographical regions can be used in this table.
+  - If new rows of inventory data are added, ensure that all cell dependents are traced correctly.
+- The table in A18:O46 is end use (combustion) data from GREET 2019 and should not be changed.
+
+'LifeCycleAssessment' tab:
+
+- Most inputs in this tab are copied from the 'OPEX' tab. See 'OPEX' tab instructions for more information.
+- The degree of credit accounting (0 - 100%) can be entered in place of Boolean operators in cells A38:A40.
+- Total impacts are tabulated in I87:S87 and on a MJ fuel functional unit basis. Graphical representation of the life cycle impact breakdowns can be found below this row.
+
+'Summary' tab:
+
+- Miscellaneous TEA and LCA breakdowns can be found in this tab.
