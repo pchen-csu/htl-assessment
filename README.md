@@ -8,7 +8,7 @@ Filename: HTL base model PChen.bkp
 
 Functionality has only been validated for Aspen Plus V10.0. Minor changes may be required for older or newer versions of the Aspen Plus software.
 
-The HTL configuration is based on process models from Knorr et al. (2013) ("Case B") and Jones et al. (2014).
+The hydrothermal liquefaction (HTL) process model configuration is based on Knorr et al. (2013) ("Case B") and Jones et al. (2014).
 
 Instructions in this section are largely focused on user inputs. Consult the authors if help is required for more advanced changes to the process model.
 
