@@ -25,6 +25,9 @@ Main flowsheet (Simulation tab):
 
 Excel instructions
 -----------
+
+Filename: HTL TEA LCA PChen.xlsm
+
 'Setup' tab:
 
 - Please note the disclaimer and additional information in this tab.
