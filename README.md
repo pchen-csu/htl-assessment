@@ -10,9 +10,11 @@ Functionality has only been validated for Aspen Plus V10.0. Minor changes may be
 
 The HTL configuration is based on process models from Knorr et al. (2013) ("Case B") and Jones et al. (2014).
 
+Instructions in this section are largely focused on user inputs. Consult the authors if help is required for more advanced changes to the process model.
+
 Properties tab:
 - In Components, HTL- and upgrading-formed compounds are selected from Jones et al. (2014). Please refer to Jones et al. (2014) or the supplementary information from this work for more information about the compounds used in the model.
-- In Selected Methods, relevant property methods include PSRK, SRK, PENG-ROB, and NRTL. If new components are added, Aspen Plus may prompt for additional inputs in the Parameters folder. Refer to an Aspen Plus guide for more information.
+- In Selected Methods, relevant property methods include PSRK, SRK, PENG-ROB, and NRTL. If new components are added, Aspen Plus may prompt for additional inputs in the Parameters folder based on the selected property method. Refer to an Aspen Plus guide for more information.
 
 Main flowsheet (Simulation tab):
 - Follow the pathway Flowsheeting Options --> Calculator
