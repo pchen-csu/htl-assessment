@@ -21,6 +21,8 @@ Main flowsheet (Simulation tab):
   - The FEED calculator allows user input for algal feed properties, including cultivation productivity (or mass flow rate), molecular composition, and ultimate analysis. It is highly recommended that new inputs are validated against real feedstock data.
   - The HTL-HFLO calculator returns total enthalpy flow rates around the HTL heat exchanger for energy balance.
   - The HTL-RECY calculator returns the mass balance of recycled nutrients in the aqueous phase. Ultimate analysis inputs from the FEED calculator are called.
+- Model Analysis Tools --> Sensitivity --> MASSFLOW
+  - Custom variables defined from the calculator blocks can be stored and are reported in Aspen Plus outputs through the MASSFLOW sensitivity block. Desired variables must be added to the Tabulate tab to be saved in the output.
   
 A100 hierarchy:
 
@@ -51,6 +53,11 @@ A300 hierarchy:
   - A300.CWTOWER calculates the cooling water flows and associated pumping requirements for water cooling in A100. Cooling tower fan circulation power is assumed negligible.
     - There is a CTWRCHEM calculator block commonly found in other National Renewable Energy Laboratory (NREL) process models. For more information, see the files in https://www.nrel.gov/extranet/biorefinery/aspen-models/
 
+Running the simulation:
+- Press the reset button (or Shift + F5) in the top taskbar to purge previous results.
+- Press the run button (or F5) to run the simulation. Ensure that new outputs show up in the flowsheet and check for warning / error messages through the 'Check Status' button at the bottom left corner of the window.
+  - Warnings will always show up due to elemental balance disparities. However, these are accounted for separately in the FEED calculator.
+  - If new results do not show up in the flowsheet, it is likely that the simulation was forced to stop. Check for errors in the history file (taskbar button or Ctrl + Alt + H).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
