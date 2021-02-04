@@ -6,7 +6,7 @@ Aspen Plus instructions
 -----------
 Filename: HTL base model PChen.bkp
 
-Functionality has only been validated for Aspen Plus V10.0. Minor changes may be required for older or newer versions of the Aspen Plus software.
+Functionality has only been validated for Aspen Plus V10.0. Minor changes may be required for older or newer versions of Aspen Plus.
 
 The hydrothermal liquefaction (HTL) process model configuration is based on Knorr et al. (2013) ("Case B") and Jones et al. (2014).
 
@@ -27,16 +27,32 @@ Main flowsheet (Simulation tab):
 A100 hierarchy:
 
 - This block covers the main HTL reactor and immediate auxiliary equipment ('HTL'), hydrotreating ('HT'), and hydrocracking ('HC').
-
+  - A100.HTL requires the most user input.
+    - It is recommended that the simulation stays in the PSRK method. However, if results for different property methods are desired, changes should only be made in this block. This can be accessed through the folder pathway Blocks --> A100 --> Blocks --> HTL --> Methods --> Specifications and changed in the 'Base method' drop-down menu. If NRTL is selected, the Henry components set 'HC' should be selected.
+    - The HTL temperature must be set manually in process blocks E-304 and R-301. A temperature in the range of 260 - 350 °C is acceptable. Pressures do not need to be changed, as that is taken care of separately.
+    - Optionally, the hot (aqueous phase) outlet temperature can be specified in block E-301. Aspen Plus may return a temperature crossover warning if the set temperature is not plausible.
+    - The HTLHRXN calculator manually overrides the Aspen Plus-calculated heat of reaction in the 'ENDO-EXO' FSPLIT block. The user input can be 0 if heat of reaction is considered negligible, > 0 if known to be endothermic, and < 0 if known to be exothermic.
+    - The PRESSURE calculator uses the temperature-dependent Antoine equation to roughly ensure that streams maintain a vapor fraction of 0. This calculator can be disabled and known pressure inputs can be specified in individual process blocks.
+    - The YIELDS calulator takes user inputs for the known relative yields (must be mass fraction, not %) of biocrude, aqueous, solid, and gas phases and splits each phase into their corresponding components defined by the user in the Properties tab. Phase yields must add up to 1. Refer to the Excel file Aspen yields.xls to vary phase yields. Any component changes in the Properties tab must be accounted for in this calculator as well. Note that in reactor block R-301, water (H2O), salts (NH4SO4), and ash are treated as inert components.
+  - A100.HT and A100.HC require minimal user input.
+    - Both blocks have hydrogen duty calculators, 'HT-H2' and 'HC-H2', respectively. Hydrogen duty is typically scaled with respect to the input stream mass flow rate by a constant factor.
+    - The upgrading process model is directly scaled from Jones et al. (2014). These process blocks may be changed to accommodate more robust data if it becomes available.
 
 A200 hierarchy:
 
 - This block covers the main heating utility component ('NGHEAT'), the low-pressure boiler / heat recovery system ('LPBOILER'), and the attached low-pressure steam generation loop ('STEAMGEN'). The latter two blocks are turned off by default.
-
+  - A200.NGHEAT calculates the required supplemental natural gas duty given the required heat duties from all of A100 (QNG-REQ heat stream).
+      - The design spec block 'NGMU' searches for the value of stream NGSUPP such that the energy balance from block FURNACE is resolved.
+      - Volatile gases produced from A100 are routed to A200 and separated by an ammonia scrubber modeled as the simple separator block NH3SCRUB. The gas recycle is used for combined heat and power and reduces the supplemental natural gas duty required for HTL, but if excess volatile gases are produced, the supplemental natural gas duty will be calculated as 0.
+  - A200.LPBOILER and A200.STEAMGEN are included for cases where heat recovery for low-pressure steam is considered. However, in this work, the power generated is negligible and these two blocks are switched off by default.
 
 A300 hierarchy:
 
 - This block covers remaining utilities - air cooling ('AIRCOOL') and cooling water ('CWTOWER').
+  - A300.AIRCOOL uses the AIRFLOW design spec to calculate the air flow and power requirement for cooling fan blocks in A100.HT and A100.HC.
+  - A300.CWTOWER calculates the cooling water flows and associated pumping requirements for water cooling in A100. Cooling tower fan circulation power is assumed negligible.
+    - There is a CTWRCHEM calculator block commonly found in other National Renewable Energy Laboratory (NREL) process models. For more information, see the files in https://www.nrel.gov/extranet/biorefinery/aspen-models/
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
