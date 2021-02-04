@@ -58,6 +58,7 @@ Running the simulation:
 - Press the run button (or F5) to run the simulation. Ensure that new outputs show up in the flowsheet and check for warning / error messages through the 'Check Status' button at the bottom left corner of the window.
   - Warnings will always show up due to elemental balance disparities. However, these are accounted for separately in the FEED calculator.
   - If new results do not show up in the flowsheet, it is likely that the simulation was forced to stop. Check for errors in the history file (taskbar button or Ctrl + Alt + H).
+- Save the simulation results as the current or a new file name. Only the backup (.bkp) file is necessary and will result in the smallest file size.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -70,7 +71,8 @@ Filename: HTL TEA LCA PChen.xlsm
 'Setup' tab:
 
 - Please note the disclaimer and additional information in this tab.
-- Click the 'Load Aspen V10.0 file' to extract simulation results from the Aspen Plus file. Because of the directory locations in the macro code, the Aspen Plus file *must* be in V10.0. If using a different version of Aspen Plus, the directory locations must be changed in the 'Setup' tab VBA code.
+- Click the 'Load Aspen V10.0 file' to extract simulation results from the saved Aspen Plus file.
+  - Because of the directory locations in the macro code, the Aspen Plus file *must* be in V10.0. If using a different version of Aspen Plus, the directory locations must be changed in the 'Setup' tab VBA code.
 - Aspen Plus results will be reported in the given units in cells G14:H28.
 - Throughout the worksheet, orange cells can be changed directly by the user.
 
