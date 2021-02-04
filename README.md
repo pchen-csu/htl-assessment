@@ -4,7 +4,7 @@ Chen, P. and Quinn, J.C. (2021). Microalgae to biofuels through hydrothermal liq
 
 Aspen Plus instructions
 -----------
-Filename: HTL base model PChen.bkp
+*Filename: HTL base model PChen.bkp*
 
 - Functionality has only been validated for Aspen Plus V10.0. Minor changes may be required for older or newer versions of Aspen Plus.
 - The hydrothermal liquefaction (HTL) process model configuration is based on Knorr et al. (2013) ("Case B") and Jones et al. (2014).
@@ -31,7 +31,7 @@ A100 hierarchy:
     - Optionally, the hot (aqueous phase) outlet temperature can be specified in block E-301. The default is 115 °C. Aspen Plus may return a temperature crossover warning if the set temperature is not plausible.
     - The HTLHRXN calculator manually overrides the Aspen Plus-calculated heat of reaction in the 'ENDO-EXO' FSPLIT block. The user input can be 0 if heat of reaction is considered negligible, > 0 if known to be endothermic, and < 0 if known to be exothermic.
     - The PRESSURE calculator uses the temperature-dependent Antoine equation to roughly ensure that streams maintain a vapor fraction of 0. This calculator can be disabled and known pressure inputs can be specified in individual process blocks.
-    - The YIELDS calulator takes user inputs for the known relative yields (must be mass fraction, not %) of biocrude, aqueous, solid, and gas phases and splits each phase into their corresponding components defined by the user in the Properties tab. Phase yields must add up to 1. Refer to the Excel file Aspen yields.xls to vary phase yields. Any component changes in the Properties tab must be accounted for in this calculator as well. Note that in reactor block R-301, water (H2O), salts (NH4SO4), and ash are treated as inert components.
+    - The YIELDS calulator takes user inputs for the known relative yields (must be mass fraction, not %) of biocrude, aqueous, solid, and gas phases and splits each phase into their corresponding components defined by the user in the Properties tab. Phase yields must add up to 1. Refer to the Excel file *Aspen yields.xls* to vary phase yields. Any component changes in the Properties tab must be accounted for in this calculator as well. Note that in reactor block R-301, water (H2O), salts (NH4SO4), and ash are treated as inert components.
   - A100.HT and A100.HC require minimal user input.
     - Both blocks have hydrogen duty calculators, 'HT-H2' and 'HC-H2', respectively. Hydrogen duty is typically scaled with respect to the input stream mass flow rate by a constant factor.
     - The upgrading process model is directly scaled from Jones et al. (2014). These process blocks may be changed to accommodate more robust data if it becomes available.
