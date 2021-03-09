@@ -1,6 +1,7 @@
 # htl-assessment
 Files in this repository are supplementary to the journal article:
-Chen, P. and Quinn, J.C. (2021). Microalgae to biofuels through hydrothermal liquefaction: Open-source techno-economic analysis and life cycle assessment. Applied Energy. Manuscript in print.
+
+Chen PH, Quinn JC. Microalgae to biofuels through hydrothermal liquefaction : Open-source techno-economic analysis and life cycle assessment. Appl Energy 2021;289:116613. https://doi.org/10.1016/j.apenergy.2021.116613.
 
 Aspen Plus instructions
 -----------
