@@ -67,6 +67,8 @@ Running the simulation:
 Excel instructions
 -----------
 
+The macro requires the 32-bit version of Excel.
+
 Filename: HTL TEA LCA PChen.xlsm
 
 'Setup' tab:
