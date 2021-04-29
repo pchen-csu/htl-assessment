@@ -7,8 +7,8 @@ Chen PH, Quinn JC. Microalgae to biofuels through hydrothermal liquefaction : Op
 
 *4/29/21*
 
-- Updated the Excel file to fix several variable name links in 'StreamData'
-- Added .apw file
+- Updated the Excel file to fix several variable name links in 'StreamData.' MFSP has seen minimal changes.
+- .apw file is larger than the Github size limit. The .bkp file can be saved as an .apw file once downloaded and opened.
 
 
 Aspen Plus instructions
