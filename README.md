@@ -3,6 +3,13 @@ Files in this repository are supplementary to the journal article:
 
 Chen PH, Quinn JC. Microalgae to biofuels through hydrothermal liquefaction : Open-source techno-economic analysis and life cycle assessment. Appl Energy 2021;289:116613. https://doi.org/10.1016/j.apenergy.2021.116613.
 
+**Changes**
+*4/29/21*
+
+- Updated the Excel file to fix several variable name links in 'StreamData'
+- Added .apw file
+
+
 Aspen Plus instructions
 -----------
 *Filename: HTL base model PChen.bkp*
