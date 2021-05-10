@@ -5,6 +5,10 @@ Chen PH, Quinn JC. Microalgae to biofuels through hydrothermal liquefaction : Op
 
 **Changes**
 
+*5/10/21*
+
+- A calculation error for reactor length was discovered and fixed in the updated file. MFSP is expected to change ~5%.
+
 *4/29/21*
 
 - Updated the Excel file to fix several variable name links in 'StreamData.' MFSP has seen minimal changes.
